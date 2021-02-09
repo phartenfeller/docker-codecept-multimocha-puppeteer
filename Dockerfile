@@ -2,7 +2,8 @@ FROM zenika/alpine-chrome:86-with-puppeteer
 
 USER root
 
-RUN mkdir /tests && mkdir /tests/output \ 
+RUN mkdir /tests && \ 
+  mkdir /tests/output && \ 
   chown -R chrome:chrome /tests
 
 RUN mkdir /codecept && \ 
