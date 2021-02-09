@@ -19,7 +19,7 @@ docker run -it --rm --security-opt seccomp=$(pwd)/chrome-seccomp.json -v /path/t
 Run the example test:
 
 ```sh
-docker run -it --rm --security-opt seccomp=$(pwd)/chrome-seccomp.json -v $(pwd)/test/sample:/usr/src/app/test codecept-multimocha-puppeteer:latest
+docker run -it --rm --security-opt seccomp=$(pwd)/chrome-seccomp.json -v $(pwd)/test/sample:/tests codecept-multimocha-puppeteer:latest
 ```
 
 Note that you need Playwright in your Codecept config and multimocha:
