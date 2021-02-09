@@ -38,7 +38,7 @@ if [[ -d "/tests/" ]]; then
 	if [ -d "$DIR" ]; then
 		echo "/tests/output exists"
 	else
-		"creating directory /tests/output"
+		echo "creating directory /tests/output"
 		mkdir /tests/output
 	fi
 
