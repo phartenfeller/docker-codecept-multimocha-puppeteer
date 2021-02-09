@@ -35,16 +35,17 @@ if [[ -d "/tests/" ]]; then
 	ls -la
 	printf "\n\n"
 
+	if [ -d "$DIR" ]; then
+		echo "/tests/output exists"
+	else
+		"creating directory /tests/output"
+		mkdir /tests/output
+	fi
+
 	echo "/tests/"
 	cd /tests/
 	ls -la
 	printf "\n\n"
-
-	if [ -d "$DIR" ]; then
-		echo "/tests/output exists"
-	else
-		mkdir /tests/output
-	fi
 
 	cp -r /codecept/output/* /tests/output
 else
