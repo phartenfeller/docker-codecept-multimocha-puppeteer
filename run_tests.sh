@@ -11,6 +11,8 @@ function file_exists() {
 
 rm -rf ./test/sample/output || true
 
+mkdir ./test/sample/output
+
 docker run --rm --security-opt seccomp=$(pwd)/chrome-seccomp.json -v $(pwd)/test/sample:/tests codecept-multimocha-puppeteer:latest
 
 file_exists ./test/sample/output/Chromium_Whatsmybrowser.png
