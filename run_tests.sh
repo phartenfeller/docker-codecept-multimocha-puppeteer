@@ -12,6 +12,7 @@ function file_exists() {
 rm -rf ./test/sample/output || true
 
 mkdir ./test/sample/output
+chmod -R 777 ./test/sample/output
 
 docker run --rm --security-opt seccomp=$(pwd)/chrome-seccomp.json -v $(pwd)/test/sample:/tests codecept-multimocha-puppeteer:latest
 
