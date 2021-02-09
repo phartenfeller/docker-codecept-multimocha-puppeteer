@@ -15,6 +15,8 @@ RUN cd /codecept && yarn --prod
 
 USER chrome
 
+RUN mkdir /usr/src/app/test
+
 WORKDIR /codecept
 
 # Run tests

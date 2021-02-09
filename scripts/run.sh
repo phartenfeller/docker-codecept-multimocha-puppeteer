@@ -15,47 +15,33 @@ if [[ -d "/tests/" ]]; then
 
 	#[ -d "/tests/output" ] || mkdir /tests/output
 
-	cp -a /tests/* /codecept
+	cp -a /usr/src/app/test/* /codecept
 
 	[ -d "/codecept/output" ] || mkdir /codecept/output
 
 	yarn codeceptjs run --reporter mocha-multi | tee /codecept/output/output.log
 
-	echo "/codecept"
-	ls -la
-	printf "\n\n"
-
-	echo "/codecept/output"
-	cd /codecept/output
-	ls -la
-	printf "\n\n"
-
-	echo "/"
-	cd /
-	ls -la
-	printf "\n\n"
-
-	if [ -d "$DIR" ]; then
-		echo "/tests/output exists"
+	if [ -d /usr/src/app/test/output ]; then
+		echo "/usr/src/app/test/output exists"
 	else
-		echo "creating directory /tests/output"
-		mkdir /tests/output
+		echo "creating directory /usr/src/app/test/output"
+		mkdir /usr/src/app/test/output
 	fi
 
-	echo "/tests/"
-	cd /tests/
-	ls -la
-	printf "\n\n"
-
-	cp -r /codecept/output/* /tests/output
-
-	echo "/tests/output"
-	cd /tests/output
-	ls -la
-	printf "\n\n"
+	cp -r /codecept/output/* /usr/src/app/test/output
 
 	echo "/codecept/output"
 	cd /codecept/output
+	ls -la
+	printf "\n\n"
+
+	echo "/usr/src/app/test"
+	cd /usr/src/app/test
+	ls -la
+	printf "\n\n"
+
+	echo "/usr/src/app/test/output"
+	cd /usr/src/app/test/output
 	ls -la
 	printf "\n\n"
 else
