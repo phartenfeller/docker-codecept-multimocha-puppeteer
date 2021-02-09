@@ -53,6 +53,11 @@ if [[ -d "/tests/" ]]; then
 	cd /tests/output
 	ls -la
 	printf "\n\n"
+
+	echo "/codecept/output"
+	cd /codecept/output
+	ls -la
+	printf "\n\n"
 else
 	show_help
 fi
