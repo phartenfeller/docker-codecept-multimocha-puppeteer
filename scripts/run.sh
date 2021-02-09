@@ -48,6 +48,11 @@ if [[ -d "/tests/" ]]; then
 	printf "\n\n"
 
 	cp -r /codecept/output/* /tests/output
+
+	echo "/tests/output"
+	cd /tests/output
+	ls -la
+	printf "\n\n"
 else
 	show_help
 fi
